@@ -9,12 +9,11 @@ cursor = conn.cursor()
 
 # Define the structure of a table in the database
 cursor.execute("""
-CREATE TABLE students (
+CREATE TABLE IF NOT EXISTS students (
     id INTEGER PRIMARY KEY,
     name TEXT,
     gender TEXT,
-    birth_year INTEGER,
-    has_former_degree boolean
+    birth_year INTEGER
 )
 """)
 
