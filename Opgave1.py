@@ -14,6 +14,13 @@ CREATE TABLE IF NOT EXISTS students (
     name TEXT,
     gender TEXT,
     birth_year INTEGER
+    has_former_degree INTEGER
 )
 """)
+
+# We CAN represent boolean values by using the datatype integer and then clarify with the following
+# in each value in column has_former_degree:
+#
+# 0 = False
+# 1 = True
 
