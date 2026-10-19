@@ -33,4 +33,15 @@ while True:
     if gender_input in valid_genders:
         gender = valid_genders[gender_input]
         break
-    print("Fejl: Ugyldigt køn. Vælg 'Male/mand', 'Female(kvinde' eller 'Other/anden'.")
+    print("Fejl: Ugyldigt køn. Tast en af følgende: 'Male/mand', 'Female/kvinde' eller 'Other/anden'.")
+# 3. Validering af fødselsår (kun heltal i et fornuftigt interval)
+while True:
+    birth_year_input = input("Indtast fødselsår (f.eks. 1999): ").strip()
+    if not birth_year_input.isdigit():
+        print("Fejl: Fødselsår skal bestå af tal (kun cifre). Prøv igen.")
+        continue
+
+    birth_year = int(birth_year_input)
+    if 1900 <= birth_year <= 2026:
+        break
+    print("Fejl: Fødselsåret skal være mellem 1900 og 2026.")
