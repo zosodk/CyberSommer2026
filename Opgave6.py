@@ -53,3 +53,22 @@ while True:
         has_former_degree = int(former_degree_input)
         break
     print("Fejl: Feltet må kun indeholde tallet 0 eller 1.")
+
+# 5. Indsæt i databasen med INSERT INTO med cursor.execute()
+sql = """
+INSERT INTO students (name, gender, birth_year, has_former_degree)
+VALUES (?, ?, ?, ?);
+"""
+
+cursor.execute(sql, (name, gender, birth_year, has_former_degree))
+conn.commit()
+
+# Vis bekræftelse
+new_id = cursor.lastrowid
+print(f"\nSucces! Studerende oprettet med ID {new_id}:")
+print(f"- Navn: {name}")
+print(f"- Køn: {gender}")
+print(f"- Fødselsår: {birth_year}")
+print(f"- Tidligere uddannelse: {'Ja (1)' if has_former_degree == 1 else 'Nej (0)'}")
+
+conn.close()
