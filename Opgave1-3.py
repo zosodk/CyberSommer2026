@@ -2,7 +2,7 @@
 # Lav et script til at definere databasens tabelstruktur – hvis I har f.eks. to tabeller så også med en
 # fremmednøgle. I skal bruge CREATE TABLE-kommandoen
 
-# import built-in sqlite3 library (comes with Python)
+# Import built-in sqlite3 library (comes with Python)
 import sqlite3
 
 # Connect to the SQLite database (or create it if it doesn't exist)
