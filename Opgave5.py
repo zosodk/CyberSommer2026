@@ -55,3 +55,4 @@ while True:
         break
     else:
         print("det er ikke et valid input kun vælg 1 eller 2\n")
+conn.close()
