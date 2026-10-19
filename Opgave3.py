@@ -134,7 +134,16 @@ for sql in sql_statements:
 
 conn.commit()
 
+
+# Opgave 3:
+# Lav et script til at tømme tabellerne for data. Her bruges DELETE FROM kommandoen.
+
+# Delete all data inside the students table without deleting the table itself
+# cursor.execute('DELETE FROM students')
 cursor.execute('DELETE FROM students')
 
+# Commit the changes
 conn.commit()
+
+# Close the database
 conn.close()
