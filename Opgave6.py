@@ -27,7 +27,7 @@ while True:
 
     # Tjek at inputtet kun består af bogstaver, mellemrum eller bindestreg
     clean_name = name.replace(" ", "").replace("-", "")
-    #clecn-name placeholder for checks - beholder stadig name - blot til check med isalpha
+    #clean-name placeholder for checks - beholder stadig name - blot til check med isalpha
     if not clean_name.isalpha():
         print("Fejl: Navnet må kun indeholde bogstaver, mellemrum og bindestreger. Prøv igen.")
         continue
