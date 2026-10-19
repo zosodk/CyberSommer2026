@@ -12,7 +12,7 @@ cursor = conn.cursor()
 # Define the structure of a table in the database
 cursor.execute("""
 CREATE TABLE students (
-    id INTEGER PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT,
     gender TEXT,
     birth_year INTEGER,
