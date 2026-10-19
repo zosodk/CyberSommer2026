@@ -13,7 +13,7 @@ CREATE TABLE students (
     id INTEGER PRIMARY KEY,
     name TEXT,
     gender TEXT,
-    birth_year INTEGER
+    birth_year INTEGER,
     has_former_degree INTEGER
 )
 """)
