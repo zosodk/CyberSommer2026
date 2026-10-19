@@ -45,3 +45,10 @@ while True:
     if 1900 <= birth_year <= 2026:
         break
     print("Fejl: Fødselsåret skal være mellem 1900 og 2026.")
+# 4. Validering af has_former_degree (kun 0 eller 1 som heltal)
+while True:
+    former_degree_input = input("Har den studerende en tidligere uddannelse? (1 for Ja / 0 for Nej): ").strip()
+    if former_degree_input in ("0", "1"):
+        has_former_degree = int(former_degree_input)
+        break
+    print("Fejl: Feltet må kun indeholde tallet 0 eller 1.")
