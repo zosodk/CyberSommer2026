@@ -11,12 +11,28 @@ cursor = conn.cursor()
 
 print("=== Opret ny studerende ===")
 
-# 1. Validering af navn (tekst, må ikke være tomt)
+# 1. Validering af navn (må ikke være tomt, skal have min. 2 tegn og må ikke indeholde tal)
 while True:
     name = input("Indtast fulde navn: ").strip()
-    if len(name) >= 2:
-        break
-    print("Fejl: Navnet skal indeholde mindst 2 tegn. Prøv igen.")
+
+    if len(name) < 2:
+        print("Fejl: Navnet skal indeholde mindst 2 tegn. Prøv igen.")
+        continue
+
+    # Tjek om der indgår tal i navnet (afviser f.eks. "34", "Peter2", osv.)
+    if any(char.isdigit() for char in name):
+    #checker hvert enkelt tegn og giver true, hvis der er et tal
+        print("Fejl: Navnet må ikke indeholde tal. Prøv igen.")
+        continue
+
+    # Tjek at inputtet kun består af bogstaver, mellemrum eller bindestreg
+    clean_name = name.replace(" ", "").replace("-", "")
+    #clecn-name placeholder for checks - beholder stadig name - blot til check med isalpha
+    if not clean_name.isalpha():
+        print("Fejl: Navnet må kun indeholde bogstaver, mellemrum og bindestreger. Prøv igen.")
+        continue
+
+    break
 
 # 2. Validering af køn (kun specifikke tekstværdier tillades)
 valid_genders = {
