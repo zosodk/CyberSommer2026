@@ -17,7 +17,7 @@ cur = conn.cursor()
 
 while True:
     choice= input("hi welcome to the sorting program"
-          "\nhow would you like to sort the students pick one of these 4 options"
+          "\nhow would you like to sort the students pick one of these 2 options"
           "\n1 birth year"
           "\n2 if they have a former degree\n")
     if choice == "1":
