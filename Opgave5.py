@@ -9,13 +9,14 @@
 #    has_former_degree INTEGER
 #)
 #""")
-chosen = False
 
 import sqlite3 as sql
 conn = sql.connect("students.db")
 cur = conn.cursor()
 
 while True:
+    chosen = False
+    retry = False
     choice= input("hi welcome to the sorting program"
           "\nhow would you like to sort the students pick one of these 2 options"
           "\n1 birth year"
@@ -31,6 +32,14 @@ while True:
                 if len(data) == 0:
                     print("there are no students born before that year")
                 chosen = True
+                retrier = input("\nwould you like to sort again? yes or no\n")
+                while retry == False:
+                    if retrier.lower() == "yes" or retrier.lower() == "y":
+                        retry = True
+                    elif retrier.lower() == "no" or retrier.lower() == "n":
+                        break
+                    else:
+                        print("\nthat was not a yes or a no\n")
             else:
                 print("you did not type a valid birth year")
 
@@ -44,16 +53,34 @@ while True:
                 data = cur.fetchall()
                 for row in data:
                     print(f"Student:{row[0]} doesnt have a former degree")
+                retrier = input("\nwould you like to sort again? yes or no\n")
+                while retry == False:
+                    if retrier.lower() == "yes" or retrier.lower() == "y":
+                        retry = True
+                    elif retrier.lower() == "no" or retrier.lower() == "n":
+                        break
+                    else:
+                        print("\nthat was not a yes or a no\n")
                 chosen = True
             elif degree.lower() == "yes" or degree.lower() == "y":
                 cur.execute("SELECT name FROM students WHERE has_former_degree = 1")
                 data = cur.fetchall()
                 for row in data:
                     print(f"Student:{row[0]} has a former degree")
+                retrier = input("\nwould you like to sort again? yes or no\n")
+                while retry == False:
+                    if retrier.lower() == "yes" or retrier.lower() == "y":
+                        retry = True
+                    elif retrier.lower() == "no" or retrier.lower() == "n":
+                        break
+                    else:
+                        print("\nthat was not a yes or a no\n")
                 chosen = True
             else:
                 print("that was not a yes or no")
-    if chosen == True:
+    if chosen == True and retry == True:
+        continue
+    elif chosen == True and retry == False:
         break
     else:
         print("det er ikke et valid input kun vælg 1 eller 2\n")
