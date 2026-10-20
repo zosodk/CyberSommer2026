@@ -28,6 +28,8 @@ while True:
                 data = cur.fetchall()
                 for row in data:
                     print(f"student:{row[1]} was born at {row[3]}")
+                if len(data) == 0:
+                    print("there are no students born before that year")
                 chosen = True
             else:
                 print("you did not type a valid birth year")
