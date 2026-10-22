@@ -12,10 +12,9 @@ cursor.execute("SELECT * FROM students;")
 students = cursor.fetchall()
 
 # Loop through every table
-
+print(f"\n=== studenter ===") # Table header
 for student in students:
     print(student)
-    print(f"\n=== studenter ===") # Table header
 
 
 
