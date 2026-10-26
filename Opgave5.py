@@ -48,8 +48,8 @@ while True:
                     chosen = True
 
                 #a function to let the user sort again if they want
-                retrier = input("\nwould you like to sort again? yes or no\n")
                 while retry == False:
+                    retrier = input("\nwould you like to sort again? yes or no\n")
                     if retrier.lower() == "yes" or retrier.lower() == "y":
                         retry = True
                     elif retrier.lower() == "no" or retrier.lower() == "n":
@@ -80,8 +80,8 @@ while True:
                     print(f"Student:{row[0]} doesnt have a former degree")
 
                 #the function to let the user go back and sort again
-                retrier = input("\nwould you like to sort again? yes or no\n")
                 while retry == False:
+                    retrier = input("\nwould you like to sort again? yes or no\n")
                     if retrier.lower() == "yes" or retrier.lower() == "y":
                         retry = True
                     elif retrier.lower() == "no" or retrier.lower() == "n":
@@ -100,8 +100,8 @@ while True:
                     print(f"Student:{row[0]} has a former degree")
 
                 #letting the user go back and sort again if they want to
-                retrier = input("\nwould you like to sort again? yes or no\n")
                 while retry == False:
+                    retrier = input("\nwould you like to sort again? yes or no\n")
                     if retrier.lower() == "yes" or retrier.lower() == "y":
                         retry = True
                     elif retrier.lower() == "no" or retrier.lower() == "n":
